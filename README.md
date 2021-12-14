@@ -1,8 +1,8 @@
-### Sobre o projeto
+## Sobre o projeto
 Esse projeto mostra como ler e gravar os antigos arquivo .ini com C#. Usando seções, chaves e valores. <br/>
 _How to read and write old .ini files with C#. Using sections, keys and values._
 
-# Arquivo de exemplo de configuração .ini (arquivo.ini)
+### Arquivo de exemplo de configuração .ini (arquivo.ini)
 ```ini
 [Cliente]
 Idade=44
@@ -13,7 +13,7 @@ Data=13/12/1990 00:00:00
 Limite=1234,56
 ```
 
-## Como gravar um arquivo de configuração
+### Como gravar um arquivo de configuração
 ```C#
 const string SECAO_CLIENTE = "Cliente";
 const string SECAO_ADICIONAL = "Adicional";
@@ -28,7 +28,7 @@ using (ConfigIni ini = new ConfigIni(arquivo))
 }
 ```
 
-## Como ler um arquivo de configuração
+### Como ler um arquivo de configuração
 ```C#
 const string SECAO_CLIENTE = "Cliente";
 const string SECAO_ADICIONAL = "Adicional";
@@ -41,7 +41,7 @@ Console.WriteLine("Limite: " + ini.GetDecimal(SECAO_ADICIONAL, "limite", 999));
 Console.WriteLine("Nasc: " + ini.GetDateTime(SECAO_ADICIONAL, "Data", DateTime.Now));
 ```
 
-## Métodos de leitura 
+### Métodos de leitura 
 ```C#
 // funções para ler informações do arquivo .ini em diversos formatos
 public string GetString(string secao, string chave, string padrao = "");
@@ -74,7 +74,7 @@ public decimal GetDecimalConfig(string chave, decimal padrao = 0);
 public DateTime GetDateTimeConfig(string chave, DateTime padrao);
 ```
 
-## Métodos de gravação
+### Métodos de gravação
 ```C#
 // Adiciona ou altera um valor ao arquivo de configuração. Se a seção não existir será criada. Se a chave não existir será criada.
 public void SetString(string secao, string chave, string valor);
@@ -113,7 +113,7 @@ public void SetDateTimeConfig(string chave, DateTime valor);
 public void SetDateConfig(string chave, DateTime valor);
 ```
 
-## Métodos para seções inteiras
+### Métodos para seções inteiras
 ```C#
 // Retorna uma lista com todas as seções existentes no arquivo 
 public List<string> GetSecoes();
